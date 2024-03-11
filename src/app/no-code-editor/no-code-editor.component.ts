@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import * as Blockly from 'blockly';
 import { toolbox } from './toolbox';
 import {javascriptGenerator} from 'blockly/javascript';
@@ -20,7 +20,7 @@ import { CustomRenderer } from './custom-renderer';
   templateUrl: './no-code-editor.component.html',
   styleUrl: './no-code-editor.component.scss'
 })
-export class NoCodeEditorComponent implements AfterViewInit {
+export class NoCodeEditorComponent implements AfterViewInit, OnDestroy {
 
   private workspace?: Blockly.WorkspaceSvg;
 
@@ -64,6 +64,10 @@ export class NoCodeEditorComponent implements AfterViewInit {
       this.allScripts = scripts;
       this.initWorkspace() 
     });
+  }
+
+  ngOnDestroy(): void {
+    Blockly.registry.unregister('renderer', 'custom-renderer');
   }
 
   private initWorkspace(): void {
