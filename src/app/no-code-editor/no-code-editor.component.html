@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <div id="blocklyDiv" class="blocklyDiv"></div>
+    <div class="codeDiv">
+        <div class="text">Generiertes Javascript:</div>
+        <div class="code">{{ selectedScript.code }}</div>
+        <div class="script-info">
+            <label for="name" class="label">Name</label>
+            <div class="input-wrapper">
+                <input id="name" class="input-field" [(ngModel)]="selectedScript.name">
+            </div>
+            <label for="description" class="label">Beschreibung</label>
+            <div class="input-wrapper">
+                <textarea id="description" class="description" rows="7" [(ngModel)]="selectedScript.description"></textarea>
+                <button class="button save" (click)="save()">Speichern</button>
+            </div>
+            <label for="scripts" class="label">Vorhandene Scripte</label>
+            <div class="input-wrapper">
+                <select [(ngModel)]="selectedScript.id" name="scripts" id="scripts" class="scripts" (change)="loadScript()">
+                    <option *ngFor="let script of allScripts" [ngValue]="script.id">{{ script.name }}</option>
+                </select>
+            </div>
+            <div class="input-wrapper">
+                <button class="button new" (click)="new()">Neu</button>
+            </div>
+            <div class="input-wrapper">
+                <button class="button delete" (click)="delete()">Löschen</button>
+            </div>
+        </div>
+    </div>
+</div>

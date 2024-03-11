@@ -1,0 +1,95 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.blocklyDiv {
+    height: 830px;
+    float: left;
+    flex: 2;
+}
+
+.codeDiv {
+    height: 828px;
+    float: left;
+    border: 1px solid #E3E3E3;
+    flex: 1;
+    position: relative;
+}
+
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+}
+
+.code {
+    height: 435px;
+
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+    white-space: pre;
+    overflow: scroll
+}
+
+.button {
+
+    position: absolute;
+
+    width: 100px;
+    height: 30px;
+
+    background-color: #3f51b5;
+    border: 1px solid #3f51b5;
+    color: white;
+    cursor: pointer;
+
+    &:active {
+        background-color: #3747a0;
+        border-color: #3747a0;
+    }
+}
+
+.save {
+    bottom: 70px;
+    right: 10px;
+}
+
+.new {
+    bottom: 35px;
+    right: 10px;
+}
+
+.delete {
+    bottom: 0;
+    right: 10px;
+}
+
+.script-info {
+    padding-top: 10px;
+    position: absolute;
+    width: 100%;
+}
+
+.input-wrapper {
+    padding: 10px;
+    padding-right: 20px;
+}
+
+.input-field {
+    height: 25px;
+    width: 100%;
+}
+
+.label {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+.description {
+    width: 100%;
+}
+
+.scripts {
+    width: 80%;
+    height: 25px;
+}

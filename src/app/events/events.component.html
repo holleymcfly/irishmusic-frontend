@@ -1,0 +1,3 @@
+<div class="list" *ngFor="let event of events$ | async">
+    <p class="item">{{ event.artist.name }}, {{ event.venue.location }}, {{ event.venue.city }}, {{ event.venue.country }}, {{ event.date | date:'dd.MM.yyyy'}}</p>
+</div>

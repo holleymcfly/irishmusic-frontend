@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <label for="scripts" class="label">Script auswählen</label>
+    <div class="input-wrapper">
+        <select [(ngModel)]="selectedScript.id" name="scripts" id="scripts" class="scripts" (change)="loadScript()">
+            <option *ngFor="let script of allScripts" [ngValue]="script.id">{{ script.name }}</option>
+        </select>
+    </div>
+    <div class="code">{{ selectedScript.code }}</div>
+    <div class="play">
+        <button class="play-button" (click)="execute()"><i class="fa fa-play-circle"></i></button>
+    </div>
+    <div class="result">{{ result | json }}</div>
+</div>
